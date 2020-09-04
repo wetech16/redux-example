@@ -15,9 +15,14 @@ const myReducer = (state = initialState, action) => {
   return newState;
 };
 const store = createStore(myReducer);
+//state tracking like react or sass. Need to put it before dispatch 
+store.subscribe(() => {
+    console.log(`state tracking/subscribe ${store.getState()} `);
+})
 store.dispatch({ type: "ADD" });
 store.dispatch({ type: "SUBSTRACT" });
 console.log(store.getState());
+
 
 function Example1() {
   return <div>See console</div>;
