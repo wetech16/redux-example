@@ -9,6 +9,9 @@ export default function Example2a () {
         if(action.type === "ATTACK"){
             return action.payload
         }
+        if(action.type === "GREEN"){
+            return action.payload
+        }
         return state;
     }
     const store = createStore(reducer, "Peace");
@@ -16,6 +19,7 @@ export default function Example2a () {
         console.log("Ex2: Store is Now", store.getState());
     })
     store.dispatch({type: "ATTACK", payload: "Its ATTACK"})
+    store.dispatch({type: "GREEN", payload: "Its GREEN"})
 
 
     return (
