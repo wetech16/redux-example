@@ -10,7 +10,7 @@ const myReducer = (state = initialState, action) => {
     newState.age += 1;
   }
   if (action.type === "SUBSTRACT") {
-    newState.age += 1;
+    newState.age -= 1;
   }
   return newState;
 };
